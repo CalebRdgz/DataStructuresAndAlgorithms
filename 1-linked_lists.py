@@ -331,14 +331,14 @@ class LinkedList:
 # my_linked_list.print_list()
 
 #REVERSE
-my_linked_list = LinkedList(1)
-my_linked_list.append(2)
-my_linked_list.append(3)
-my_linked_list.append(4)
-#print the original linked list before using the reverse method
-print("ORIGINAL LINKED LIST BEFORE REVERSE METHOD:")
-my_linked_list.print_list()
-#print the updated linked list after using the remove method
-print("UPDATED LINKED LIST AFTER REVERSE METHOD:")
-my_linked_list.reverse()
-my_linked_list.print_list()
+# my_linked_list = LinkedList(1)
+# my_linked_list.append(2)
+# my_linked_list.append(3)
+# my_linked_list.append(4)
+# #print the original linked list before using the reverse method
+# print("ORIGINAL LINKED LIST BEFORE REVERSE METHOD:")
+# my_linked_list.print_list()
+# #print the updated linked list after using the remove method
+# print("UPDATED LINKED LIST AFTER REVERSE METHOD:")
+# my_linked_list.reverse()
+# my_linked_list.print_list()
