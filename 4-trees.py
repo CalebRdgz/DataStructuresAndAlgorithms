@@ -61,4 +61,88 @@
 #remove() - O(logn)
 
 #BST Constructor
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
+class BinarySearchTree:
+    #create an empty tree instead of creating a tree with a Node
+    #insert a new Node using the insert method instead
+    def __init__(self):
+        self.root = None #root instead of head
+
+    #insert a new node to the Tree:
+    def insert(self, value):
+        #create a new node
+        new_node = Node(value)
+        #if tree is empty, point root to the new Node
+        if self.root is None:
+            self.root = new_node
+            return True
+        #point temp to the root of the Tree
+        temp = self.root
+        #break out of this while loop by returning True or False:
+        while (True):
+            #compare that new node to the parent(temp) Node, Less than = Left, Greater than = Right
+            #if the new node is equal to a parent node, return True or False
+            if new_node.value == temp.value:
+                return False
+            #If the new Node is less than a parent Node, insert it on the left:
+            if new_node.value < temp.value:
+                if temp.left is None:
+                    temp.left = new_node
+                    return True
+                temp = temp.left
+            #If the new Node is greater than a parent Node, insert it on the right:
+            else:
+                if temp.right is None:
+                    temp.right = new_node
+                    return True
+                temp = temp.right
+
+    #check if a tree contains a perticular value:
+    def contains(self, value):
+        #if root == None, return False (don't need this since if it's empty, it wont contain it)
+        if self.root is None:
+            return False
+        #temp = self.root
+        temp = self.root
+        #while temp is not None
+        while temp is not None:
+            #if value < temp.value = left
+            if value < temp.value:
+                temp = temp.left
+            #elif value > temp.value = right
+            elif value > temp.value:
+                temp = temp.right
+            #else (value == temp.value) = return True
+            else:
+                return True
+        #value is not in the Tree, so return False
+        return False
+
+
+#INSERT METHOD
+# my_tree = BinarySearchTree()
+# my_tree.insert(2)
+# my_tree.insert(1)
+# my_tree.insert(3)
+
+# print(my_tree.root.value) #returns Node 2
+# print(my_tree.root.left.value) #returns Node 1
+# print(my_tree.root.right.value) #returns Node 3
+
+#CONTAINS METHOD
+my_tree = BinarySearchTree()
+my_tree.insert(47)
+my_tree.insert(21)
+my_tree.insert(76)
+my_tree.insert(18)
+my_tree.insert(27)
+my_tree.insert(52)
+my_tree.insert(82)
+
+print(my_tree.contains(27))
+print(my_tree.contains(17))
